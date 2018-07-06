@@ -16,14 +16,14 @@
                 <block class="Magento\Framework\View\Element\Messages" name="messages" as="messages" template="Magento_Theme::messages.phtml"/>
             </container>
 
-            <block class="Magento\Theme\Block\Html\Header\Logo"
+            <!--<block class="Magento\Theme\Block\Html\Header\Logo"
                    name="clean_checkout_logo"
                    before="-"
                    ifconfig="clean_checkout/cleanup/display_logo">
                 <arguments>
                     <argument name="logo_img_width" xsi:type="number">200</argument>
                 </arguments>
-            </block>
+            </block>-->
         </referenceContainer>
 
         <referenceBlock name="head.additional">
