@@ -10,33 +10,11 @@ define([
     'use strict';
 
     return function (target) {
-
-        target.setHash = function (newHash) {
-            let oldHash = window.location.hash.replace('#', '');
-            if (
-                (
-                    customer.isLoggedIn()
-                    || window.checkoutConfig.quoteData.customer_id
-                    || window.checkoutConfig.isCustomerLoggedIn
-                )
-                && oldHash == ''
-                && newHash == 'email'
-            ) {
-                newHash = quote.isVirtual() ? 'payment' : 'shipping';
-            }
-            window.location.hash = newHash;
-        };
-
         /**
          * Disallow going back to Email step when we're logged in.
          * Stop jerky animations between steps by removing body animations.
          */
         target.navigateTo = function (code, scrollToElementId) {
-            // var hashString = window.location.hash.replace('#', '');
-            // if (hashString = '' && customer.isLoggedIn() && code === 'email') {
-            //     target.navigateTo(quote.isVirtual() ? 'payment' : 'shipping');
-            //     return;
-            // }
             if (customer.isLoggedIn() && code === 'email') {
                 return;
             }

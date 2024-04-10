@@ -3,12 +3,8 @@
  * See LICENSE.txt for license details.
  */
 define([
-    'ko',
-    'Magento_Customer/js/model/customer'
-], function (
-    ko,
-    customer
-) {
+
+], function () {
     'use strict';
 
     /**
@@ -19,8 +15,7 @@ define([
             defaults: {
                 template: 'Rubic_CleanCheckoutTheme/progress-bar',
                 visible: true
-            },
-            isCustomerLoggedIn: ko.observable(customer.isLoggedIn())
+            }
         });
     }
 });

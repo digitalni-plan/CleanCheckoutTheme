@@ -26,16 +26,16 @@ define([
 
         initialize: function () {
             this._super();
-            stepNavigator.registerStep('email', null, $t('Login'), this.isVisible, _.bind(this.navigate, this), 5);
+            stepNavigator.registerStep('email', null, $t('Email'), this.isVisible, _.bind(this.navigate, this), 5);
             return this;
         },
 
         navigate: function () {
-            // if (customer.isLoggedIn()) {
-            //     this.navigateToNextStep();
-            // } else {
+            if (customer.isLoggedIn()) {
+                this.navigateToNextStep();
+            } else {
                 this.isVisible(true);
-            // }
+            }
         },
 
         validateEmail: function () {
